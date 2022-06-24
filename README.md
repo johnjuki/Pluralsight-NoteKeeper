@@ -1,1 +1,1 @@
-NoteKeeper app. :]
+Following a guide to build android apps on Pluralsight.
