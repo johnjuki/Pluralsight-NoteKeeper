@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import androidx.navigation.fragment.findNavController
 import com.example.notekeeper.databinding.FragmentFirstBinding
 
@@ -31,6 +32,12 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // Populate the Spinner with courses contained in DataManager
+        val dataManager = DataManager()
+        val coursesAdapter = ArrayAdapter(requireContext(),android.R.layout.simple_spinner_item, dataManager.courses.values.toList())
+        coursesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        binding.spinnerCourses.adapter = coursesAdapter
 
         binding.buttonFirst.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
