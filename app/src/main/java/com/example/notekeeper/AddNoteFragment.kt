@@ -6,15 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import androidx.navigation.fragment.findNavController
-import com.example.notekeeper.databinding.FragmentFirstBinding
+import com.example.notekeeper.databinding.FragmentAddNoteBinding
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class FirstFragment : Fragment() {
+class AddNoteFragment : Fragment() {
 
-    private var _binding: FragmentFirstBinding? = null
+    private var _binding: FragmentAddNoteBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -25,7 +24,7 @@ class FirstFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentFirstBinding.inflate(inflater, container, false)
+        _binding = FragmentAddNoteBinding.inflate(inflater, container, false)
         return binding.root
 
     }
@@ -34,14 +33,10 @@ class FirstFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Populate the Spinner with courses contained in DataManager
-        val dataManager = DataManager()
-        val coursesAdapter = ArrayAdapter(requireContext(),android.R.layout.simple_spinner_item, dataManager.courses.values.toList())
+        val coursesAdapter = ArrayAdapter(requireContext(),android.R.layout.simple_spinner_item, DataManager.courses.values.toList())
         coursesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spinnerCourses.adapter = coursesAdapter
 
-        binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-        }
     }
 
     override fun onDestroyView() {

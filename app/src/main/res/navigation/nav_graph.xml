@@ -3,26 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/NotesListFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.notekeeper.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        android:id="@+id/NotesListFragment"
+        android:name="com.example.notekeeper.NotesListFragment"
+        android:label="@string/notes_list_fragment_label"
+        tools:layout="@layout/fragment_notes_list">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_NotesListFragment_to_AddNoteFragment"
+            app:destination="@id/AddNoteFragment" />
     </fragment>
+
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.notekeeper.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        android:id="@+id/AddNoteFragment"
+        android:name="com.example.notekeeper.AddNoteFragment"
+        android:label="@string/add_note_fragment_label"
+        tools:layout="@layout/fragment_add_note">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_AddNoteFragment_to_NotesListFragment"
+            app:destination="@id/NotesListFragment" />
     </fragment>
+
 </navigation>

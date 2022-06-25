@@ -6,7 +6,9 @@
         <entry key="..\:/pg/code/kotlin/pluralsight/app/src/main/res/layout/activity_main.xml" value="0.14130434782608695" />
         <entry key="..\:/pg/code/kotlin/pluralsight/app/src/main/res/layout/content_main.xml" value="0.14130434782608695" />
         <entry key="..\:/pg/code/kotlin/pluralsight/app/src/main/res/layout/fragment_first.xml" value="0.16666666666666666" />
+        <entry key="..\:/pg/code/kotlin/pluralsight/app/src/main/res/layout/fragment_note_list.xml" value="0.19927536231884058" />
         <entry key="..\:/pg/code/kotlin/pluralsight/app/src/main/res/layout/fragment_second.xml" value="0.14130434782608695" />
+        <entry key="..\:/pg/code/kotlin/pluralsight/app/src/main/res/layout/note_list_view_holder.xml" value="0.1634963768115942" />
         <entry key="..\:/pg/code/kotlin/pluralsight/app/src/main/res/menu/menu_main.xml" value="0.2" />
       </map>
     </option>
