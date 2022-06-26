@@ -8,4 +8,6 @@
     <string name="note_title_hint">Note title</string>
     <string name="note_text_hint">Note text</string>
     <string name="note_text">Note Text</string>
+    <string name="action_next">Next</string>
+    <string name="change_title">Edit Note</string>
 </resources>

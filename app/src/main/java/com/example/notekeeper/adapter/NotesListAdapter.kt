@@ -1,4 +1,4 @@
-package com.example.notekeeper.adapters
+package com.example.notekeeper.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

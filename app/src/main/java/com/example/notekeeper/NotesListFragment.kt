@@ -1,20 +1,23 @@
 package com.example.notekeeper
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.notekeeper.adapters.NotesListAdapter
+import com.example.notekeeper.adapter.NotesListAdapter
 import com.example.notekeeper.databinding.FragmentNotesListBinding
 
 class NotesListFragment : Fragment() {
     private var _binding: FragmentNotesListBinding? = null
     private val binding get() = _binding!!
     private lateinit var notesListAdapter: NotesListAdapter
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,6 +39,11 @@ class NotesListFragment : Fragment() {
         }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        menu.clear()
+    }
+
     private fun setUpRecyclerView() {
         val layoutManager = LinearLayoutManager(requireContext())
         binding.notesListRecyclerView.layoutManager = layoutManager
@@ -43,6 +51,11 @@ class NotesListFragment : Fragment() {
         binding.notesListRecyclerView.addItemDecoration(dividerItemDecoration)
         notesListAdapter = NotesListAdapter(DataManager)
         binding.notesListRecyclerView.adapter = notesListAdapter
+    }
+
+    override fun onResume() {
+        super.onResume()
+        notesListAdapter.notifyDataSetChanged()
     }
 
     override fun onDestroyView() {
