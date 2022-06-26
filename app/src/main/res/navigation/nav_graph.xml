@@ -13,7 +13,12 @@
 
         <action
             android:id="@+id/action_NotesListFragment_to_AddNoteFragment"
-            app:destination="@id/AddNoteFragment" />
+            app:destination="@id/AddNoteFragment">
+            <argument
+                android:name="noteIndexPosition"
+                app:argType="integer"
+                android:defaultValue="-1" />
+        </action>
     </fragment>
 
     <fragment
@@ -22,9 +27,13 @@
         android:label="@string/add_note_fragment_label"
         tools:layout="@layout/fragment_add_note">
 
-        <action
-            android:id="@+id/action_AddNoteFragment_to_NotesListFragment"
-            app:destination="@id/NotesListFragment" />
+<!--        <action-->
+<!--            android:id="@+id/action_AddNoteFragment_to_NotesListFragment"-->
+<!--            app:destination="@id/NotesListFragment" />-->
+        <argument
+            android:name="noteIndexPosition"
+            app:argType="integer"
+            android:defaultValue="-1" />
     </fragment>
 
 </navigation>
